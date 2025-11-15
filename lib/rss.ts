@@ -1,5 +1,7 @@
 import { allPosts, type Post } from "contentlayer/generated"
 
+import { mdxToHtml } from "./markdown"
+
 const siteUrl = "https://gaymensfieldguide.com"
 const feedTitle = "Gay Men’s Field Guide"
 const feedDescription =
@@ -9,14 +11,15 @@ function escapeCdata(value: string) {
   return value.replace(/]]>/g, "]]]]><![CDATA[>")
 }
 
-function buildItem(post: Post) {
+async function buildItem(post: Post) {
   const url = `${siteUrl}${post.slug}`
   const description = post.description
     ? `<description><![CDATA[${escapeCdata(post.description)}]]></description>`
     : ""
   const body = post.body.raw?.trim()
-  const content = body
-    ? `<content:encoded><![CDATA[${escapeCdata(body)}]]></content:encoded>`
+  const html = body ? await mdxToHtml(body) : ""
+  const content = html
+    ? `<content:encoded><![CDATA[${escapeCdata(html)}]]></content:encoded>`
     : ""
 
   const lines = [
@@ -41,12 +44,14 @@ function buildItem(post: Post) {
   return lines.join("\n")
 }
 
-export function generateRssFeed(posts: Post[] = allPosts) {
+export async function generateRssFeed(posts: Post[] = allPosts) {
   const sorted = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
 
-  const items = sorted.map((post) => buildItem(post)).join("\n")
+  const items = (await Promise.all(sorted.map((post) => buildItem(post)))).join(
+    "\n",
+  )
 
   const lastUpdated = sorted.length
     ? new Date(sorted[0].date).toUTCString()

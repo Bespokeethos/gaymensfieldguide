@@ -2,8 +2,8 @@ import { generateRssFeed } from "@/lib/rss"
 
 export const revalidate = 3600
 
-export function GET() {
-  const feed = generateRssFeed()
+export async function GET() {
+  const feed = await generateRssFeed()
 
   return new Response(feed, {
     headers: {
