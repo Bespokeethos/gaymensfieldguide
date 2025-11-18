@@ -1,6 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
-
 import type { Product } from "@/data/products"
 
 interface ProductCardProps {
@@ -20,12 +18,14 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <div className="mt-auto flex items-center justify-between text-sm font-medium text-slate-900 dark:text-slate-100">
           <span>{product.price}</span>
-          <Link
+          <a
             href={product.checkoutUrl}
+            target="_blank"
+            rel="noreferrer noopener"
             className="inline-flex items-center rounded-full border border-slate-900 px-4 py-1 text-xs uppercase tracking-wide transition hover:bg-slate-900 hover:text-white dark:border-slate-100 dark:hover:bg-slate-100 dark:hover:text-slate-900"
           >
             Buy now
-          </Link>
+          </a>
         </div>
       </div>
     </article>
