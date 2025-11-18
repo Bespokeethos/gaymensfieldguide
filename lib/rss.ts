@@ -1,11 +1,11 @@
 import { allPosts, type Post } from "contentlayer/generated"
 
 import { mdxToHtml } from "./markdown"
+import { siteConfig } from "./site"
 
-const siteUrl = "https://gaymensfieldguide.com"
-const feedTitle = "Gay Men’s Field Guide"
-const feedDescription =
-  "Stories, strategies, and soft skills for queer men who build community off the beaten path."
+const siteUrl = siteConfig.url
+const feedTitle = siteConfig.name
+const feedDescription = siteConfig.description
 
 function escapeCdata(value: string) {
   return value.replace(/]]>/g, "]]]]><![CDATA[>")

@@ -7,10 +7,7 @@ import { Analytics } from "@/components/analytics"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
-
-const siteUrl = "https://gaymensfieldguide.com"
-const siteDescription =
-  "Stories, strategies, and soft skills for queer men who build community off the beaten path."
+import { siteConfig } from "@/lib/site"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({
@@ -19,30 +16,30 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Gay Men’s Field Guide",
-    template: "%s · Gay Men’s Field Guide",
+    default: siteConfig.name,
+    template: `%s · ${siteConfig.name}`,
   },
-  description: siteDescription,
-  authors: [{ name: "Upton Rand" }],
+  description: siteConfig.description,
+  authors: [{ name: siteConfig.author }],
   alternates: {
     types: {
-      "application/rss+xml": `${siteUrl}/rss.xml`,
+      "application/rss+xml": `${siteConfig.url}/rss.xml`,
     },
   },
   openGraph: {
-    title: "Gay Men’s Field Guide",
-    description: siteDescription,
-    url: siteUrl,
-    siteName: "Gay Men’s Field Guide",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gay Men’s Field Guide",
-    description: siteDescription,
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
 }
 
