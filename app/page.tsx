@@ -9,7 +9,7 @@ export default function Home() {
           GMFG
         </h1>
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
-          Gay Men's Field Guide
+          Gay Men&apos;s Field Guide
         </h2>
         
         <p className="text-xl md:text-2xl text-gray-300 mb-10">
@@ -22,7 +22,7 @@ export default function Home() {
         </p>
 
         <p className="mt-8 text-lg text-gray-400">
-          We're building a new vibe: a coding website, blog, and store. Check back soon for the launch.
+          We&apos;re building a new vibe: a coding website, blog, and store. Check back soon for the launch.
         </p>
       </div>
     </div>
