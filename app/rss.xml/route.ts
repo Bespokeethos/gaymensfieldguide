@@ -1,13 +1,12 @@
-import { generateRssXml } from "@/lib/rss"
+import { generateRssFeed } from "@/lib/rss"
 
 export async function GET() {
-  const body = await generateRssXml()
+  const rss = await generateRssFeed()
 
-  return new Response(body, {
-    status: 200,
+  return new Response(rss, {
     headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "s-maxage=3600, stale-while-revalidate=86400",
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "s-maxage=3600, stale-while-revalidate",
     },
   })
 }
