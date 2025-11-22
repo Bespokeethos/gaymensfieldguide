@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next"
-
 import { allPages, allPosts } from "contentlayer/generated"
 
 import { siteConfig } from "@/lib/site"

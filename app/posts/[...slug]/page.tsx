@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
@@ -70,8 +71,8 @@ export default async function PostPage({ params }: PostProps) {
       <Mdx code={post.body.code} />
       <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 text-sm text-slate-600 dark:border-slate-800/70 dark:bg-slate-900/60 dark:text-slate-300">
         <p>
-          Thanks for wandering along. When you’re ready for a tangible souvenir, the <a href="/shop">merch table</a> is stocked
-          with limited runs and hosted checkout links.
+          Thanks for wandering along. When you’re ready for a tangible souvenir, the <Link href="/shop">merch table</Link> is
+          stocked with limited runs and hosted checkout links.
         </p>
       </div>
     </article>
