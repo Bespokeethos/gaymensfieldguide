@@ -1,10 +1,11 @@
 import { allPosts } from "contentlayer/generated"
 
-import { mdxToHtml } from "./mdx-to-html"
+import { mdxToHtml } from "./markdown"
+import { siteConfig } from "./site"
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gaymensfieldguide.com"
-const SITE_TITLE = "Gay Men's Field Guide"
-const SITE_DESCRIPTION = "Updates and essays from Gay Men's Field Guide"
+const siteUrl = siteConfig.url
+const feedTitle = siteConfig.name
+const feedDescription = siteConfig.description
 
 function escapeCdata(value: string) {
   return value.replaceAll("]]>", "]]>]]><![CDATA[")
@@ -15,7 +16,7 @@ export async function generateRssFeed() {
     allPosts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .map(async (post) => {
-        const url = new URL(post.slug, SITE_URL).toString()
+        const url = new URL(post.slug, siteUrl).toString()
         const content = await mdxToHtml(post.body.raw)
 
         const description = post.description ?? ""
@@ -34,9 +35,9 @@ export async function generateRssFeed() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title><![CDATA[${escapeCdata(SITE_TITLE)}]]></title>
-    <link>${SITE_URL}</link>
-    <description><![CDATA[${escapeCdata(SITE_DESCRIPTION)}]]></description>
+    <title><![CDATA[${escapeCdata(feedTitle)}]]></title>
+    <link>${siteUrl}</link>
+    <description><![CDATA[${escapeCdata(feedDescription)}]]></description>
 ${items.join("\n")}
   </channel>
 </rss>`
