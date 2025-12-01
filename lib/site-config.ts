@@ -13,9 +13,10 @@ export const siteConfig = {
       href: "#latest",
     },
   },
-  contactEmail: "hello@gaymensfieldguide.com",
+  contactEmail: "contact@gaymensfieldguide.com",
   nav: [
-    { label: "Articles", href: "/posts" },
+    { label: "Blog", href: "/blog" },
+    { label: "Field Notes", href: "/posts" },
     { label: "Shop", href: "/shop" },
     { label: "About", href: "/about" },
   ],

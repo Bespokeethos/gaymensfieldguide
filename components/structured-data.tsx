@@ -28,7 +28,7 @@ export function StructuredData() {
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "hello@gaymensfieldguide.com",
+          "email": "contact@gaymensfieldguide.com",
           "contactType": "customer service"
         }
       },
