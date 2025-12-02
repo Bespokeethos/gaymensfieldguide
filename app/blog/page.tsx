@@ -36,7 +36,7 @@ export default function BlogPage() {
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-white transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-500 dark:bg-white dark:text-slate-900"
               >
                 Read the latest
-                <span aria-hidden>→</span>
+                <span aria-hidden="true">→</span>
               </Link>
               <Link
                 href="/posts"
@@ -57,15 +57,15 @@ export default function BlogPage() {
             <h2 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-slate-50">Fresh drops for the experimenters</h2>
             <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden />
+                <span className="mt-1 h-2 w-2 rounded-full bg-fuchsia-500" aria-hidden={true} />
                 <span>Rapid prompts for shipping portfolio-ready visuals and storyboards in an evening sprint.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
+                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" aria-hidden={true} />
                 <span>Micro-co-op playbooks for queer dev crews who split cloud credits, datasets, and late-night QA.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-sky-500" aria-hidden />
+                <span className="mt-1 h-2 w-2 rounded-full bg-sky-500" aria-hidden={true} />
                 <span>LLM edge experiments that keep ethics, consent, and community care in the workflow.</span>
               </li>
             </ul>
