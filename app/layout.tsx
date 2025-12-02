@@ -114,7 +114,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </a>
 
             <header 
-              className="sticky top-6 z-20 mb-10 rounded-2xl border border-slate-200/60 bg-white/90 px-6 py-4 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-900/70"
+              className="mb-10 rounded-2xl border border-slate-200/60 bg-white/90 px-6 py-4 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-900/70"
               role="banner"
             >
               <div className="flex flex-wrap items-center gap-4">
@@ -155,10 +155,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <span>{siteConfig.location}</span>
                 <a
                   className="text-fuchsia-700 transition hover:text-fuchsia-500 dark:text-fuchsia-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 rounded"
-                  href={`mailto:${siteConfig.contactEmail}`}
-                  aria-label={`Email us at ${siteConfig.contactEmail}`}
+                  href="mailto:contact@gaymensfieldguide.com"
+                  aria-label="Email us at contact@gaymensfieldguide.com"
                 >
-                  {siteConfig.contactEmail}
+                  contact@gaymensfieldguide.com
                 </a>
               </div>
             </footer>
