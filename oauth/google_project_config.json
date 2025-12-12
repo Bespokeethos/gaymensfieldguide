@@ -1,0 +1,8 @@
+{
+  "project_id": "gen-lang-client-0566947374",
+  "location": "us-central1",
+  "api_scopes": [
+    "https://www.googleapis.com/auth/cloud-platform",
+    "https://www.googleapis.com/auth/generative-language"
+  ]
+}

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F5F5F4; /* paper-DEFAULT */
+  --foreground: #111827; /* industrial-900 */
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b; /* Zinc 950 essentially */
+    --foreground: #F5F5F4;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-mono); /* Monospace by default for the "Technical" Vibe */
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+  
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-industrial-200 dark:bg-black/50 dark:border-industrial-800;
+  }
+}
