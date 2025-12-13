@@ -11,14 +11,23 @@ export interface Article {
 
 export const EDITORIAL_FEED: Article[] = [
   {
+    id: '007',
+    title: 'The Mind of the Machine: How AI is Augmenting Memory to Power Independent Living',
+    subtitle: 'Cutting-edge AI, like the wearable MemPal assistant, is solving the fundamental memory limitations of LLMs to help older adults age safely and independently.',
+    authorId: 'architect',
+    tag: 'MEMORY',
+    readTime: '10 MIN',
+    variant: 'holo',
+    featured: true
+  },
+  {
     id: '001',
     title: 'The Dog, The Alien, and You',
     subtitle: 'You don\'t expect your dog to file your taxes. So why do you expect AI to be human? It\'s not. It\'s something else entirely. And that\'s what makes it beautiful.',
     authorId: 'architect',
     tag: 'PHILOSOPHY',
     readTime: '8 MIN',
-    variant: 'holo',
-    featured: true
+    variant: 'holo'
   },
   {
     id: '002',

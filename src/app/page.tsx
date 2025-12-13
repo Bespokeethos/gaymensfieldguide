@@ -9,7 +9,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero */}
-      <section className="relative">
+      <section 
+        className="relative bg-cover bg-center" 
+        style={{ backgroundImage: "url('/images/ai-memory/hero_image.png')" }}
+      >
         <HeroAnimation />
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
@@ -48,8 +51,12 @@ export default function Home() {
               <span>{featured.readTime}</span>
             </div>
           </div>
-          <div className="aspect-square bg-industrial-900 rounded-sm border border-industrial-800 flex items-center justify-center">
-            <div className="w-32 h-32 border-2 border-banana-500/30 rotate-45" />
+          <div className="aspect-square bg-industrial-900 rounded-sm border border-industrial-800 overflow-hidden">
+            <img 
+              src="/images/ai-memory/article_thumbnail.png" 
+              alt={featured.title} 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
