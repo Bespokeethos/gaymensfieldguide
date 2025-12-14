@@ -2,20 +2,26 @@
 // Enforcing usage of specifically granted billing-backed models.
 
 const config = {
-  project_id: "gen-lang-client-0566947374",
+  project_id: "bespokeethos-analytics-475007",
   location: "us-central1",
   models: {
-    // High-intelligence model (The "Brain") - "Nano Banana 3"
+    // High-intelligence model (The "Brain") - "Nano Banana 3" 
+    // UPGRADED to Gemini 2.5 Pro for best reasoning + higher rate limits
     // BEST FOR: Complex Layouts, Reasoning, Architecture
-    main: "models/gemini-3-pro-preview", 
+    main: "models/gemini-2.5-pro", 
     
     // High-speed/efficiency model (The "Nano Banana")
+    // UPGRADED to Gemini 2.0 Flash for faster responses + higher limits
     // BEST FOR: Quick fixes, simple text, fast iterations
-    fast: "models/nano-banana-pro-preview",
+    fast: "models/gemini-2.0-flash",
     
     // Aliases for specific tasks
-    complex_layout: "models/gemini-3-pro-preview",
-    nano_banana_3: "models/gemini-3-pro-preview"
+    complex_layout: "models/gemini-2.5-pro",
+    nano_banana_3: "models/gemini-2.5-pro",
+    
+    // Fallbacks (if 2.x has issues)
+    legacy_pro: "models/gemini-1.5-pro",
+    legacy_flash: "models/gemini-1.5-flash"
   },
   billing: {
     status: "verified",

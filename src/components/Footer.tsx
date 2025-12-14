@@ -2,22 +2,21 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-industrial-200 dark:border-industrial-800 bg-industrial-50 dark:bg-industrial-900 mt-20">
+    <footer className="border-t border-zinc-800 bg-zinc-950 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           
           {/* Brand & Manifest */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold uppercase tracking-tighter">
-              The <span className="text-banana-600 dark:text-banana-400">Field Guide</span>
+            <h2 className="text-2xl font-bold uppercase tracking-tighter text-white">
+              GMFG
             </h2>
-            <div className="font-mono text-xs text-industrial-500 space-y-2 leading-relaxed max-w-sm">
+            <div className="font-mono text-sm text-zinc-400 space-y-2 leading-relaxed max-w-sm">
               <p>
-                <span className="text-banana-600 dark:text-banana-400 font-bold">SYSTEM NOTE:</span> This entire site was built from the inside out.
+                The definitive editorial for the post-code era. We engineer vibe.
               </p>
               <p>
-                Generated using <strong>Deep Context</strong> provided by The Staff (AI/Human Hybrids). 
-                Accelerated by <strong>Parallel Processing</strong> and sent into <strong>Antigravity OverDrive</strong>.
+                Built with Next.js 16, Tailwind, and local batch processing.
               </p>
             </div>
           </div>
@@ -25,31 +24,31 @@ export default function Footer() {
           {/* Links */}
           <div className="grid grid-cols-2 gap-8 text-sm font-mono uppercase tracking-widest">
              <div className="space-y-4">
-                <h3 className="text-industrial-400">Bureau</h3>
-                <ul className="space-y-2">
-                   <li><Link href="/staff" className="hover:text-banana-600 transition-colors">The Staff</Link></li>
-                   <li><Link href="/manifesto" className="hover:text-banana-600 transition-colors">Manifesto</Link></li>
-                   <li><Link href="/arsenal" className="hover:text-banana-600 transition-colors">Arsenal</Link></li>
+                <h3 className="text-zinc-500">Navigation</h3>
+                <ul className="space-y-2 text-zinc-300">
+                   <li><Link href="/staff" className="hover:text-white transition-colors">Staff</Link></li>
+                   <li><Link href="/manifesto" className="hover:text-white transition-colors">Manifesto</Link></li>
+                   <li><Link href="/arsenal" className="hover:text-white transition-colors">Hardware</Link></li>
                 </ul>
              </div>
              <div className="space-y-4">
-                <h3 className="text-industrial-400">Protocol</h3>
-                <ul className="space-y-2">
-                   <li><a href="#" className="hover:text-banana-600 transition-colors cursor-not-allowed opacity-50">Vibe Check</a></li>
-                   <li><a href="#" className="hover:text-banana-600 transition-colors cursor-not-allowed opacity-50">Sovereign Key</a></li>
-                   <li><a href="#" className="hover:text-banana-600 transition-colors cursor-not-allowed opacity-50">Radio Silence</a></li>
+                <h3 className="text-zinc-500">Legal</h3>
+                <ul className="space-y-2 text-zinc-300">
+                   <li><a href="#" className="hover:text-white transition-colors opacity-50 cursor-not-allowed">Privacy</a></li>
+                   <li><a href="#" className="hover:text-white transition-colors opacity-50 cursor-not-allowed">Terms</a></li>
+                   <li><a href="#" className="hover:text-white transition-colors opacity-50 cursor-not-allowed">Sitemap</a></li>
                 </ul>
              </div>
           </div>
         </div>
 
-        <div className="border-t border-industrial-200 dark:border-industrial-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-industrial-400">
+        <div className="border-t border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500">
            <div>
-              NO COPYRIGHT INTENDED. STEAL THIS CODE.
+              &copy; 2025 GMFG. Open Source.
            </div>
            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              ANTIGRAVITY ENGINE: ACTIVE
+              <span className="w-2 h-2 bg-green-500 rounded-full" />
+              SYSTEM ACTIVE
            </div>
         </div>
       </div>

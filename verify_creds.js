@@ -1,7 +1,13 @@
 const https = require('https');
+require('dotenv').config({ path: '.env.local' });
 
-const apiKey = 'AIzaSyBSFaSbDrf3QoEP-qJsWOmtW9PI6QUF_l4';
+const apiKey = process.env.GOOGLE_GEMINI_API;
 const baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
+
+if (!apiKey) {
+  console.error('ERROR: GOOGLE_GEMINI_API not found in environment variables.');
+  process.exit(1);
+}
 
 async function verify() {
   // 1. List Models

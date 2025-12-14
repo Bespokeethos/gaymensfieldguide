@@ -42,7 +42,8 @@ This site, *Gay Men's Field Guide* (GMFG), is **NOT** a personal blog about Upto
 7.  **Atmosphere Caching**: Any file referenced >2 times MUST be flagged as `[CACHED]` and treated as established context to prevent re-reading/token waste.
 8.  **Tiering & Batching**:
     *   **Auto-Tier Down**: Always automatically lower inference model (Pro -> Flash -> Nano) if maximum reasoning is not required.
-    *   **Batch By Default**: File changes and non-interactive completions MUST use Batch API (via `genai-processors`) to minimize cost.
+    *   **Batch First Protocol**: ANY task involving >3 file edits or data transformations MUST be scripted (Python/AsyncIO) and run as a batch. Manual editing of >3 files is PROHIBITED.
+    *   **Agent <-> Factory Handoff**: Agents design the factory (scripts). The Factory (scripts) builds the product. Agents do not build manually.
 6.  **The 70% Handoff Protocol**: Upon reaching 70% Context Window, the Agent MUST:
     *   Create a "Handoff Script" (Summary of state).
     *   Initiate a Seamless Compacting Handoff.
@@ -51,6 +52,36 @@ This site, *Gay Men's Field Guide* (GMFG), is **NOT** a personal blog about Upto
 8.  **Tiering & Batching**:
     *   **Auto-Tier Down**: Always automatically lower inference model (Pro -> Flash -> Nano) if maximum reasoning is not required.
     *   **Batch By Default**: File changes and non-interactive completions MUST use Batch API (via `genai-processors`) to minimize cost.
+9.  **Imagen 3 Mandatory Protocol**:
+    *   **REQUIRED**: Before ANY image generation, reference `IMAGEN3_PROMPTING_GUIDE.md` [CACHED].
+    *   **Default Generator**: Vertex AI Imagen 3 (separate quota from Gemini).
+    *   **Prompt Structure**: [SUBJECT] → [STYLE: Nano Banana] → [ELEMENTS] → [OUTPUT: PNG].
+    *   **Fallback**: If quota exhausted, use CSS/SVG (`GenPlaceholder.tsx`).
+
+---
+
+## I-B. IMAGE GENERATION PROTOCOL (IMAGEN 3)
+
+> **⚠️ MANDATORY**: Before ANY image generation (single OR batch), read `IMAGEN3_PROMPTING_GUIDE.md`.
+
+1.  **Default Generator**: Vertex AI Imagen 3 (NOT Gemini image quota)
+2.  **Billing**: Google Cloud Credits (separate quota pool)
+3.  **Pre-Generation Checklist**:
+    - [ ] Confirm `IMAGEN3_PROMPTING_GUIDE.md` is cached
+    - [ ] Prompt follows Nano Banana aesthetic
+    - [ ] Required keywords: `industrial`, `tactical`, `banana/yellow accent`
+    - [ ] Output format: PNG, optimized, dark mode
+4.  **Prompt Structure**:
+    ```
+    [SUBJECT]: Description
+    [STYLE]: Nano Banana - dark industrial, neon yellow, tactical
+    [ELEMENTS]: Technical annotations, monospace, circuit traces
+    [OUTPUT]: PNG, high detail, dark mode optimized
+    ```
+5.  **Auto-Cache**: `IMAGEN3_PROMPTING_GUIDE.md` [CACHED] after first read.
+6.  **Fallback**: If quota exhausted, use CSS/SVG (`GenPlaceholder.tsx`).
+
+---
 
 ## II. TOOL INTEGRATION & MAXIMIZATION (The "Good Stuff")
 6.  **Verified Patterns Only**: Use `google-gemini/cookbook` patterns for all new features. Do not reinvent the wheel.
@@ -166,6 +197,24 @@ This site, *Gay Men's Field Guide* (GMFG), is **NOT** a personal blog about Upto
 - Hook `vibe_scanner.py` to dynamically generate `editorial.ts` entries.
 - Build "The Arsenal" (Hardware Sales Page).
 - Maintain the "Masterpiece" Vibe. No regression.
+
+---
+
+### Session: 2025-12-13 (The Fixer)
+**Status:** READY FOR DEPLOYMENT
+**Agent:** Antigravity (Batch Architect)
+**Handoff Location:** `brain/861a4e64-9d0c-462f-a714-41533bda5a87/deployment_sprint_handoff.md`
+
+**Achievements:**
+- **Crash Resolved:** Fixed Hydration Mismatch in `HeroAnimation.tsx`.
+- **Factory Built:** "Batch First" Architecture implemented (`pipe/optimize_batch.py`, `pipe/auto_fix_batch.py`).
+- **Lighthouse Tuned:** `next.config.mjs` & `layout.tsx` optimized (Fonts, Metadata, Security).
+- **Vibe Restored:** `tailwindcss-animate` & `typing-effect` restored.
+
+**Next Steps for Future Agent:**
+- **Execute The Factory**: Run `mass_produce.py` (to be built) for content saturation.
+- **Hardware Arsenal**: Build the shop.
+- **Deploy**: `npx vercel --prod`.
 
 ---
 

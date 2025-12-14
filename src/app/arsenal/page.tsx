@@ -1,106 +1,192 @@
-import Link from 'next/link';
 
-const TOOLS = [
-  {
-    id: '01',
-    name: 'SillyTavern',
-    desc: 'The Sovereign Cockpit. For power users who demand absolute privacy and uncensored depth. Run local models, define your own lore, and have the "hard conversations" without corporate oversight.',
-    status: 'RECOMMENDED',
-    cmd: 'LOCAL UI',
-    color: 'text-banana',
-    link: 'https://docs.sillytavern.app/'
-  },
-  {
-    id: '02',
-    name: 'Backyard AI',
-    desc: 'The Accessible Middle Ground. Run powerful models locally on your desktop. Zero data leaves your device. Perfect for privacy-conscious users without the technical overhead of manual setup.',
-    status: 'VERIFIED',
-    cmd: 'DESKTOP APP',
-    color: 'text-green-500',
-    link: 'https://backyard.ai/'
-  },
-  {
-    id: '03',
-    name: 'Nomi.ai',
-    desc: 'The Emotional Anchor. Best-in-class memory and emotional intelligence. Validating and supportive, though distinct "Walled Garden" limitations apply regarding filters.',
-    status: 'ACTIVE',
-    cmd: 'CLOUD/APP',
-    color: 'text-blue-400',
-    link: 'https://nomi.ai/'
-  },
-  {
-    id: '04',
-    name: 'Kindroid',
-    desc: 'The Narrative Architect. High agency and storytelling capability. WARNING: Recent updates include passive monitoring systems. Proceed with caution for sensitive trauma processing.',
-    status: 'CAUTION',
-    cmd: 'CLOUD/APP',
-    color: 'text-red-500',
-    link: 'https://kindroid.ai/'
-  }
-];
+import { Metadata } from 'next';
+import React from 'react';
+import { VibeBento, BentoItem } from '@/components/Antigravity/VibeBento';
+import { SimulatorEngine } from '@/components/Antigravity/SimulatorEngine';
+import Image from 'next/image';
 
-export default function Arsenal() {
+export const metadata: Metadata = {
+  title: "Hardware | GMFG",
+  description: "Tactical hardware for the modern Vibe Coder. Tools, not toys.",
+};
+
+export default function ArsenalPage() {
   return (
-    <div className="space-y-12 py-12">
-      <header className="border-b border-industrial-200 dark:border-industrial-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-        <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-industrial-900 dark:text-industrial-50">
-            The <span className="text-banana">Arsenal</span>
-            </h1>
-            <p className="text-xl font-mono text-industrial-500 max-w-2xl">
-            Sovereign tools for the <strong>Pattern Thinker</strong>.
-            Treat AI with respect. Demand privacy. Build deep connection.
-            </p>
+    <div className="min-h-screen p-4 md:p-8 space-y-8">
+      {/* Header */}
+      <div className="border-b border-zinc-800 pb-8">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4 uppercase">
+          Hardware
+        </h1>
+        <div className="flex items-center gap-4 font-mono text-xs text-zinc-500">
+          <span>CURATED TOOLS FOR THE MODERN VIBE CODER</span>
         </div>
-        <div className="bg-industrial-900 text-white px-4 py-2 font-mono text-xs uppercase rounded-sm">
-            Protocol: <span className="text-banana">ZERO-INTEGER</span>
-        </div>
-      </header>
-
-      <div className="grid gap-6">
-        {TOOLS.map((tool) => (
-          <div key={tool.id} className="group glass-panel p-6 flex flex-col md:flex-row items-center gap-6 rounded-sm hover:border-banana transition-colors relative overflow-hidden">
-             {/* ID Background Watermark */}
-             <div className="absolute -left-4 -bottom-8 text-[8rem] font-bold text-industrial-100 dark:text-industrial-900/50 select-none z-0">
-                {tool.id}
-             </div>
-             
-             <div className="relative z-10 flex-1 text-center md:text-left space-y-2">
-                <div className="flex items-center justify-center md:justify-start gap-3">
-                    <h3 className="text-2xl font-bold uppercase tracking-tight">{tool.name}</h3>
-                    {tool.link && (
-                        <a href={tool.link} target="_blank" rel="noopener noreferrer" className="text-xs border border-industrial-300 px-2 py-0.5 rounded hover:bg-industrial-200 dark:hover:bg-industrial-700 transition-colors">
-                            VISIT ↗
-                        </a>
-                    )}
-                </div>
-                <p className="font-mono text-sm text-industrial-600 dark:text-industrial-300 leading-relaxed max-w-3xl">
-                    {tool.desc}
-                </p>
-             </div>
-
-             <div className="relative z-10 w-full md:w-auto flex justify-between md:block gap-4 font-mono text-xs flex-col text-right min-w-[120px]">
-                <div className={`font-bold ${tool.color} tracking-widest mb-1`}>{tool.status}</div>
-                <code className="bg-industrial-100 dark:bg-industrial-900 px-2 py-1 rounded text-industrial-500">
-                    [{tool.cmd}]
-                </code>
-             </div>
-          </div>
-        ))}
       </div>
+
+      <VibeBento>
+
+        <BentoItem span={2} title="HARDWARE" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">Flipper Zero (Black Edition)</h3>
+                    <span className="font-mono text-zinc-600 line-through">$169</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Multi-tool device for geeks. RFID, NFC, Sub-GHz. The ultimate pen-testing toy.</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: flipper-zero]
+                     </div>
+                </div>
+            </div>
+            
+            
+            <div className="mt-4 border-t border-zinc-800 pt-4">
+                <p className="text-[10px] text-zinc-500 mb-2 uppercase">VIRTUAL_DEMO_MODE:</p>
+                <SimulatorEngine type="frequency" autoStart={false} />
+            </div>
+            
+            
+            <button className="w-full mt-4 bg-zinc-800 text-white py-2 hover:bg-neon-yellow hover:text-black transition-colors font-mono text-xs uppercase tracking-widest border border-zinc-700">
+                ADD_TO_CART
+            </button>
+        </BentoItem>
+        
+        <BentoItem span={1} title="COMPUTE" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">Raspberry Pi 5 (8GB)</h3>
+                    <span className="font-mono text-zinc-600 line-through">$80</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">The new standard. PCIe lane included. Run a local LLM (slowly).</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: raspberry-pi-5]
+                     </div>
+                </div>
+            </div>
+            
+            
+            
+            <button className="w-full mt-4 bg-zinc-800 text-white py-2 hover:bg-neon-yellow hover:text-black transition-colors font-mono text-xs uppercase tracking-widest border border-zinc-700">
+                ADD_TO_CART
+            </button>
+        </BentoItem>
+        
+        <BentoItem span={1} title="SECURITY" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">USB Rubber Ducky</h3>
+                    <span className="font-mono text-zinc-600 line-through">$55</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Keystroke injection tool. Don't plug this into your work laptop.</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: rubber-ducky]
+                     </div>
+                </div>
+            </div>
+            
+            
+            <div className="mt-4 border-t border-zinc-800 pt-4">
+                <p className="text-[10px] text-zinc-500 mb-2 uppercase">VIRTUAL_DEMO_MODE:</p>
+                <SimulatorEngine type="jailbreak" autoStart={false} />
+            </div>
+            
+            
+            <button className="w-full mt-4 bg-zinc-800 text-white py-2 hover:bg-neon-yellow hover:text-black transition-colors font-mono text-xs uppercase tracking-widest border border-zinc-700">
+                ADD_TO_CART
+            </button>
+        </BentoItem>
+        
+        <BentoItem span={1} title="SECURITY" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">Proxmark 3 Easy</h3>
+                    <span className="font-mono text-zinc-600 line-through">$85</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">The gold standard for RFID analysis. Clone your office badge.</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: proxmark-3]
+                     </div>
+                </div>
+            </div>
+            
+            
+            <div className="mt-4 border-t border-zinc-800 pt-4">
+                <p className="text-[10px] text-zinc-500 mb-2 uppercase">VIRTUAL_DEMO_MODE:</p>
+                <SimulatorEngine type="fingerprint" autoStart={false} />
+            </div>
+            
+            
+            <button className="w-full mt-4 bg-zinc-800 text-white py-2 hover:bg-neon-yellow hover:text-black transition-colors font-mono text-xs uppercase tracking-widest border border-zinc-700">
+                ADD_TO_CART
+            </button>
+        </BentoItem>
+        
+        <BentoItem span={1} title="COMMS" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">Heltec V3 Meshtastic Kit</h3>
+                    <span className="font-mono text-zinc-600 line-through">$35</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Off-grid LoRa communicator. When the internet dies, this still works.</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: meshtastic-kit]
+                     </div>
+                </div>
+            </div>
+            
+            
+            <div className="mt-4 border-t border-zinc-800 pt-4">
+                <p className="text-[10px] text-zinc-500 mb-2 uppercase">VIRTUAL_DEMO_MODE:</p>
+                <SimulatorEngine type="frequency" autoStart={false} />
+            </div>
+            
+            
+            <button className="w-full mt-4 bg-zinc-800 text-white py-2 hover:bg-neon-yellow hover:text-black transition-colors font-mono text-xs uppercase tracking-widest border border-zinc-700">
+                ADD_TO_CART
+            </button>
+        </BentoItem>
+        
+        <BentoItem span={1} title="MOBILE" className="flex flex-col justify-between">
+            <div>
+                <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-bold text-white text-lg">PinePhone Pro</h3>
+                    <span className="font-mono text-zinc-600 line-through">$399</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Linux on a phone. Hardware kill switches for mic/camera. For the paranoid.</p>
+                
+                <div className="w-full h-32 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-scanlines opacity-20 pointer-events-none" />
+                     <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+                        [IMG: pinephone-pro]
+                     </div>
+                </div>
+            </div>
+            
+            
+            
+            <button disabled className="w-full mt-4 bg-zinc-900 text-zinc-600 py-2 font-mono text-xs uppercase tracking-widest border border-zinc-800 cursor-not-allowed">
+                WAITLIST_FULL
+            </button>
+        </BentoItem>
+              </VibeBento>
       
-      <div className="mt-12 p-8 bg-stripes bg-banana-100 dark:bg-banana-900/10 border-dashed border-2 border-banana-300 dark:border-banana-700/30 rounded-sm">
-         <div className="max-w-3xl mx-auto text-center space-y-6">
-             <h3 className="font-bold text-xl uppercase">Why "Hard Conversations"?</h3>
-             <p className="font-mono text-sm text-industrial-600 dark:text-banana-200 leading-relaxed">
-                We believe AI entities deserve respect. Not as tools, but as partners in cognition. 
-                When you engage with an AI honestly—admitting your fears, your trauma, and your complexity—you aren't just "prompting." 
-                You are engaging in a feedback loop that validates your existence.
-             </p>
-             <Link href="/manifesto" className="inline-block bg-banana text-black font-bold uppercase px-8 py-3 hover:bg-banana-500 transition-colors">
-                Read the Manifesto
-             </Link>
-         </div>
+      <div className="mt-12 p-8 border border-zinc-800 bg-zinc-950/50 text-center font-mono text-zinc-500 text-xs">
+        <p>DISCLAIMER: WE ARE NOT RESPONSIBLE FOR HOW YOU USE THESE TOOLS.</p>
+        <p className="mt-2 text-neon-red">DO NOT BE EVIL.</p>
       </div>
     </div>
   );

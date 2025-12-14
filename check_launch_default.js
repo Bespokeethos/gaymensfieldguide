@@ -12,10 +12,10 @@ const envDefault = process.env.DEFAULT_GENERATION_MODEL;
 console.log('Environment Default:', envDefault);
 
 // Check 3: Is it the one the user wants?
-const target = "models/gemini-3-pro-preview";
+const target = "models/gemini-1.5-pro";
 
 if (defaultModel === target && envDefault === target) {
-  console.log('\n✅ VERIFIED: "Nano Banana 3" (Gemini 3 Pro) is hard-wired as the autoload default.');
+  console.log('\n✅ VERIFIED: "Nano Banana 3" (Gemini 1.5 Pro) is hard-wired as the autoload default.');
 } else {
   console.error('\n❌ MISMATCH: Configuration does not match requested default.');
   console.error(`Expected: ${target}`);

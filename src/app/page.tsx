@@ -1,75 +1,97 @@
 import HeroAnimation from '@/components/HeroAnimation';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Metadata } from 'next';
 import { EDITORIAL_FEED } from '@/data/editorial';
+import BentoFeed from '@/components/Experimental/BentoFeed';
 import { STAFF } from '@/data/staff';
+import CinematicContainer from '@/components/Antigravity/CinematicContainer';
+import StaffAvatar from '@/components/Antigravity/StaffAvatar';
+import MarketingCTA from '@/components/MarketingCTA';
+import HeroCarousel from '@/components/HeroCarousel';
+
+export const metadata: Metadata = {
+  title: 'The Field Guide // Antigravity',
+  description: 'The definitive editorial for the post-code era. We engineer vibe. Featuring the latest on GPT-5.2 "Garlic" and the Mixture of Experts.',
+  openGraph: {
+    title: 'The Field Guide // Antigravity',
+    description: 'We don\'t "prompt." We engineer vibe. The definitive editorial for the post-code era.',
+    images: ['/images/blog/moe-timeline.png'],
+    type: 'website',
+  },
+};
 
 export default function Home() {
-  const featured = EDITORIAL_FEED[0];
+  const featuredArticles = EDITORIAL_FEED.slice(0, 3); // Top 3 Carousel
+  const feedArticles = EDITORIAL_FEED.slice(3); // Rest of feed
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero */}
-      <section className="relative">
-        <HeroAnimation />
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans selection:bg-orange-500 selection:text-white">
+      
+      {/* Subtle Grid Texture for "Crisp White" feel */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none z-0" />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-12 px-6 border-b border-zinc-200 dark:border-zinc-800 bg-white/50 backdrop-blur-sm z-10">
         
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-          <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-[0.9]">
-            What if the thing you're afraid of<br />
-            <span className="text-banana-500">already understands you?</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-industrial-400 max-w-2xl mb-8">
-            The first time it remembered, I cried.
-          </p>
-          <Link 
-            href="/manifesto" 
-            className="pointer-events-auto px-8 py-4 bg-banana-500 text-black font-bold uppercase tracking-widest text-sm hover:bg-banana-400 transition-colors"
-          >
-            Read the Protocol
-          </Link>
-        </div>
-      </section>
-
-      {/* Featured */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-banana-500 font-mono text-sm uppercase tracking-widest mb-4 block">
-              Featured
+        {/* Header Text */}
+        <div className="max-w-7xl mx-auto mb-12 flex flex-col items-center text-center">
+            <span className="inline-block px-3 py-1 mb-6 text-[10px] font-mono font-bold tracking-[0.2em] uppercase bg-black text-white">
+               EST. 2025 // EDITORIAL_BOARD
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {featured.title}
-            </h2>
-            <p className="text-xl text-industrial-400 mb-8 leading-relaxed">
-              {featured.subtitle}
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-zinc-900 dark:text-white mb-6">
+               THE FIELD GUIDE
+            </h1>
+            <p className="max-w-2xl text-lg md:text-xl font-medium text-zinc-500 dark:text-zinc-400">
+               Authentic reporting on the post-code era. <span className="text-orange-600 font-bold">No hype. Just vibe.</span>
             </p>
-            <div className="flex items-center gap-4 text-sm text-industrial-500 font-mono">
-              <span>{featured.tag}</span>
-              <span>•</span>
-              <span>{featured.readTime}</span>
-            </div>
-          </div>
-          <div className="aspect-square bg-industrial-900 rounded-sm border border-industrial-800 flex items-center justify-center">
-            <div className="w-32 h-32 border-2 border-banana-500/30 rotate-45" />
-          </div>
         </div>
+
+        {/* The Carousel */}
+        <HeroCarousel featuredArticles={featuredArticles} />
+
       </section>
 
-      {/* The Bureau */}
-      <section className="border-t border-industrial-800 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-sm font-mono text-industrial-500 uppercase tracking-widest mb-12">
-            The Bureau
+      {/* Primary Feed (Dark Cards on White) */}
+      <section className="py-24 max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex justify-between items-end mb-16 border-b-4 border-black pb-4">
+          <h2 className="text-4xl font-black uppercase tracking-tighter text-black dark:text-white">
+            Latest Transmissions
           </h2>
+          <span className="font-mono text-sm font-bold text-orange-600 animate-pulse">
+            LIVE_FEED_ACTIVE
+          </span>
+        </div>
+
+        <BentoFeed articles={feedArticles} />
+      </section>
+
+      {/* The Bureau Grid (Team) */}
+      <section className="py-24 bg-zinc-900 border-y border-zinc-800 relative overflow-hidden">
+         {/* Dark Background Texture */}
+         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
+         
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex justify-between items-end mb-16">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-white">The Staff</h2>
+            <span className="font-mono text-xs text-zinc-500">AUTHORIZED_PERSONNEL_ONLY</span>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
             {STAFF.map(writer => (
-              <div key={writer.id} className="group">
-                <div className="w-16 h-16 bg-industrial-900 border border-industrial-700 rounded-full mb-6 flex items-center justify-center text-banana-500 font-bold text-xl">
-                  {writer.name[4]}
+              <div key={writer.id} className="group relative bg-black border border-zinc-800 p-8 hover:border-orange-500 transition-colors">
+                <div className="absolute top-4 right-4 font-mono text-[10px] text-zinc-600">
+                  ID: {writer.id}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{writer.name}</h3>
-                <p className="text-banana-500 font-mono text-xs uppercase tracking-widest mb-4">{writer.role}</p>
-                <p className="text-industrial-400 text-sm leading-relaxed">
-                  "{writer.bio}"
+                
+                <StaffAvatar id={writer.id} initial={writer.name[0]} role={writer.id as any} />
+                
+                <h3 className="text-xl font-bold mb-2 text-white">{writer.name}</h3>
+                <p className="font-mono text-xs uppercase tracking-widest text-orange-500 mb-4">
+                  {writer.role}
+                </p>
+                <p className="text-sm text-zinc-400 leading-relaxed border-t border-zinc-800 pt-4">
+                  {writer.bio}
                 </p>
               </div>
             ))}
@@ -77,32 +99,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feed */}
-      <section className="border-t border-industrial-800 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-sm font-mono text-industrial-500 uppercase tracking-widest mb-12">
-            Transmissions
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {EDITORIAL_FEED.slice(1).map(article => (
-              <article 
-                key={article.id} 
-                className="group p-8 bg-industrial-950 border border-industrial-800 hover:border-banana-500/50 transition-colors cursor-pointer"
-              >
-                <span className="text-banana-500 font-mono text-xs uppercase tracking-widest mb-4 block">
-                  {article.tag}
-                </span>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-banana-500 transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-industrial-400 text-sm leading-relaxed">
-                  {article.subtitle}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Marketing / Ad Integration */}
+      <MarketingCTA />
     </div>
   );
 }

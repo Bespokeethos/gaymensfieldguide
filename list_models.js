@@ -1,7 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 
-const apiKey = 'AIzaSyBSFaSbDrf3QoEP-qJsWOmtW9PI6QUF_l4';
+const apiKey = 'AIzaSyDe1Ab3TGIvRDaH5bmPKj5vg3yfHOMLuK0';
 const baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
 
 async function listModels() {
