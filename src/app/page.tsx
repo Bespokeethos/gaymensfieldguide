@@ -45,22 +45,6 @@ export default function Home() {
             <p className="max-w-2xl text-lg md:text-xl font-medium text-zinc-500 dark:text-zinc-400">
                Authentic reporting on the post-code era. <span className="text-orange-600 font-bold">No hype. Just vibe.</span>
             </p>
-<<<<<<< HEAD
-=======
-            <div className="flex items-center gap-4 text-sm text-industrial-500 font-mono">
-              <span>{featured.tag}</span>
-              <span>•</span>
-              <span>{featured.readTime}</span>
-            </div>
-          </div>
-          <div className="aspect-square bg-industrial-900 rounded-sm border border-industrial-800 overflow-hidden">
-            <img 
-              src="/images/ai-memory/article_thumbnail.png" 
-              alt={featured.title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
->>>>>>> 8b72cb615716d94284734e472138cda7e2a698a7
         </div>
 
         {/* The Carousel */}
