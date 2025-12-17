@@ -23,16 +23,16 @@ const config = {
     // High-intelligence model (The "Brain") - "Nano Banana 3" 
     // UPGRADED to Gemini 2.5 Pro for best reasoning + higher rate limits
     // BEST FOR: Complex Layouts, Reasoning, Architecture
-    main: "models/gemini-2.5-pro", 
+    main: "models/gemini-2.0-flash-exp", 
     
     // High-speed/efficiency model (The "Nano Banana")
     // UPGRADED to Gemini 2.0 Flash for faster responses + higher limits
     // BEST FOR: Quick fixes, simple text, fast iterations
-    fast: "models/gemini-2.0-flash",
+    fast: "models/gemini-2.0-flash-exp",
     
     // Aliases for specific tasks
-    complex_layout: "models/gemini-2.5-pro",
-    nano_banana_3: "models/gemini-2.5-pro",
+    complex_layout: "models/gemini-2.0-flash-exp",
+    nano_banana_3: "models/gemini-2.0-flash-exp",
     
     // Fallbacks (if 2.x has issues)
     legacy_pro: "models/gemini-1.5-pro",

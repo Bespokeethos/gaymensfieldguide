@@ -35,7 +35,7 @@ async function verify() {
 
   // 2. Test Generation (Billing Check)
   // Use Flash if available, otherwise Pro, to test the pipe.
-  const targetModel = flashModels[0] || 'models/gemini-1.5-flash'; 
+  const targetModel = flashModels.find(n => n.includes('exp')) || 'models/gemini-2.0-flash-exp'; 
   console.log(`\n--- Testing Generation with ${targetModel} ---`);
   
   const postData = JSON.stringify({
