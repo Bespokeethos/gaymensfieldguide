@@ -79,7 +79,7 @@ export default function SickNav() {
           {/* System Status Ticker */}
           <div className="hidden lg:flex items-center gap-3 pl-4 border-l border-zinc-800 text-[10px] font-mono text-zinc-600" aria-hidden="true">
              <div className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-orange-500 animate-crt-flicker" />
+                <span className="w-1.5 h-1.5 bg-orange-500" />
                 <span>ONLINE</span>
              </div>
              <div className="flex items-center gap-1">

@@ -44,7 +44,7 @@ export function BentoItem({ children, className, span = 1, title }: BentoItemPro
            <span className="font-mono text-[9px] uppercase text-zinc-500 group-hover:text-green-400 group-hover:text-glow-green transition-colors tracking-widest">
              [{title}]
            </span>
-           <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-green-500 animate-crt-flicker" />
+           <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-green-500" />
         </div>
       )}
 

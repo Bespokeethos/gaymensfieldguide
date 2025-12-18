@@ -49,7 +49,7 @@ export function InteractiveContainer({
           [{type.toUpperCase()}] :: {title}
         </span>
         <div className="flex gap-1">
-          <div className="w-2 h-2 rounded-none border border-zinc-950 bg-zinc-600 animate-crt-flicker" />
+          <div className="w-2 h-2 rounded-none border border-zinc-950 bg-zinc-600" />
           <div className="w-2 h-2 rounded-none border border-zinc-950 bg-zinc-600" />
         </div>
       </div>

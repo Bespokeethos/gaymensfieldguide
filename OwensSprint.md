@@ -1,4 +1,4 @@
-# 🚀 OWENS SPRINT: AUTONOMOUS MONETIZATION ENGINE
+# 🚀 UPTONS SPRINT: AUTONOMOUS MONETIZATION ENGINE
 
 ## Executive Summary
 
@@ -369,6 +369,6 @@ This automation stack is designed for a **9-month runway to profitability**:
 
 **Document Created:** December 16, 2025  
 **Author:** Antigravity Automation Engine  
-**For:** Owen @ Gay Men's Field Guide
+**For:** Uptons Rand @ Gay Men's Field Guide
 
 *"Build once. Run forever. Compound daily."*

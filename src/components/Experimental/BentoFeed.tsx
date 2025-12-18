@@ -45,7 +45,7 @@ export default function BentoFeed({ articles }: BentoFeedProps) {
            }`}>
              {article.image && (
                 <div className="relative w-full h-full"> 
-                   <div className="absolute inset-0 bg-zinc-900 animate-pulse" />
+                   <div className="absolute inset-0 bg-zinc-900" />
                    <Image 
                      src={article.image} 
                      alt={article.title}
